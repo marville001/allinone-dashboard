@@ -45,6 +45,15 @@ const Navbar = () => {
 
     const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false)
+    } else {
+      setActiveMenu(true)
+    }
+  }, [screenSize, setActiveMenu])
+  
+
     return (
         <div className='flex justify-between p-2 md:mx-6 relative'>
         <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
